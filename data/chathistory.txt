@@ -1,0 +1,26 @@
+amy,server,hello
+amy,server,hell
+amy,server,heo
+bob,amy,hi
+linin,server,hehe
+amy,bob,who are you
+bob,amy,i am bob
+amy,bob,you r so cute
+bob,amy,test
+amy,bob,test
+bob,amy,test
+amy,bob,test
+bob,amy,test
+bob,amy,=_=
+bob,amy,test
+amy,bob,test
+bob,amy,*_*
+bob,amy,help
+bob,amy,在吗
+amy,linlin,hello
+hello,test,D:\pics\005BVpkKgy1fxsgnug3gyj30c809smxm.jpg
+hello,test,hello
+hello,test,D:\pics\QQ图片20190103170538.jpg
+hello,test,D:\pics\6ef2fc5aly1fy0hpzecuej20r30kutcc.jpg
+amy,bob,send
+bob,amy,recieve
