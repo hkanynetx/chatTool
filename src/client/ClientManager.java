@@ -97,6 +97,7 @@ public class ClientManager {
                             //最后一个元素是数字
                             System.out.println("in clientmanager: 我可以显示了");
                             userOnlineList.add(0,line);
+                            System.out.println("in clientmanager recieve userOnlineList:"+line);
                             if(i==0){
                                 count = Integer.parseInt(line);
                             }
@@ -110,6 +111,7 @@ public class ClientManager {
                             setGetUserSocket(true);
                         }
                         dialogbox.showMessage(line);
+                        System.out.println("in clientmanager recieve dialogbox:"+line);
                     }
 
                     if (pWriter != null) {
@@ -139,7 +141,7 @@ public class ClientManager {
         int i=0;
         for(; i<n; i++){
             namelist[i] = userOnlineList.get(i);
-            System.out.println("in clientmanager recieve:"+namelist[i]);
+            System.out.println("in clientmanager recieve:"+ namelist[i] + userOnlineList.get(i));
         }
         return namelist;
     }

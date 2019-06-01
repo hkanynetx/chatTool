@@ -34,6 +34,15 @@ public class Uwindows extends JFrame{
     private JPanel contentPane;
     private static String username;
     public static int i;
+    public DatagramSocket ds;
+
+    public DatagramSocket getDs() {
+        return ds;
+    }
+
+    public void setDs(DatagramSocket ds) {
+        this.ds = ds;
+    }
 
     public String getUsername() {
         return username;
@@ -93,6 +102,16 @@ public class Uwindows extends JFrame{
         contentPane.add(panel1);
         panel1.setVisible(true);
 
+
+        //UDP发送消息
+        try {
+            System.out.println("in uwindows: myport:"+ClientManager.getClientManager().socket.getLocalPort());
+            this.ds = new DatagramSocket(ClientManager.getClientManager().socket.getLocalPort());
+//            dia.setDatagramSocket(ds);
+
+        } catch (SocketException e1) {
+            e1.printStackTrace();
+        }
 
         //消息——服务器
         messageFile.addMenuListener(new MenuListener() {
@@ -194,19 +213,9 @@ public class Uwindows extends JFrame{
 
                                 dia.setFriend_ip(ip);
                                 dia.setFriend_port(port);
+                                dia.setDatagramSocket(ds);
 
-                                //UDP发送消息
-                                DatagramSocket ds=null;
-                                try {
-                                    System.out.println("in uwindows: myport:"+ClientManager.getClientManager().socket.getLocalPort());
-                                    ds = new DatagramSocket(ClientManager.getClientManager().socket.getLocalPort());
-                                    dia.setDatagramSocket(ds);
-
-                                } catch (SocketException e1) {
-                                    e1.printStackTrace();
-                                }
-
-                                //接收消息线程
+                                //接收消息新线程
                                 p2pChatSocket pcs = new p2pChatSocket();
                                 pcs.setDia(dia);
 
@@ -214,6 +223,8 @@ public class Uwindows extends JFrame{
                                 pcs.setPort(localport);
                                 pcs.setDatagramSocket(ds);
                                 pcs.start();
+
+                                dia.setPcs(pcs);
 
                             }else{
                                 dia.showMessage("-----------------对方离线请留言---------------");
@@ -394,10 +405,10 @@ public class Uwindows extends JFrame{
         int count = namelist.length - 1;
 
         int i=0;
-//        for(; i<count; i++){
-//            System.out.println("in dialogbox: 在线用户：" + namelist[i]);
-//        }
-//        i=0;
+        for(; i<count; i++){
+            System.out.println("in dialogbox: 在线用户：" + namelist[i]);
+        }
+        i=0;
         //判断用户是否在线
         boolean online = false;
         for(; i<count; i++){

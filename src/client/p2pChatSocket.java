@@ -77,6 +77,7 @@ public class p2pChatSocket extends Thread {
                     dia.showImage(line);
                 }else{
                     dia.showMessage(line);
+                    System.out.println("in p2pchatsocket " + dia.getTitle1());
                 }
 
             }

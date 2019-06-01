@@ -32,6 +32,15 @@ public class DialogBox extends JFrame {
     private String friend_ip;
     private int friend_port;
     DatagramSocket datagramSocket;
+    p2pChatSocket pcs;
+
+    public p2pChatSocket getPcs() {
+        return pcs;
+    }
+
+    public void setPcs(p2pChatSocket pcs) {
+        this.pcs = pcs;
+    }
 
     public DatagramSocket getDatagramSocket() {
         return datagramSocket;

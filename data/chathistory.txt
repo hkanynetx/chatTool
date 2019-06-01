@@ -24,3 +24,4 @@ hello,test,D:\pics\QQ图片20190103170538.jpg
 hello,test,D:\pics\6ef2fc5aly1fy0hpzecuej20r30kutcc.jpg
 amy,bob,send
 bob,amy,recieve
+sam,amy,test

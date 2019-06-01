@@ -54,7 +54,7 @@ public class ChatManager {
     public void publish(String msg){
         for (int i = 0; i < vector.size(); i++) {
             ChatSocket csTemp = vector.get(i);
-                csTemp.out(msg+"\n");//不用发送给自己。
+                csTemp.out(msg+"\n");
         }
     }
 
